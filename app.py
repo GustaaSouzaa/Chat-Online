@@ -8,7 +8,7 @@ import uuid
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'huwmit-jyzwo8-wEjzaw'
 app.config['UPLOAD_FOLDER'] = os.path.join(app.root_path, 'static', 'uploads')
-socketio = SocketIO(app)
+socketio = SocketIO(app, cors_allowed_origins="*")
 
 users = {} 
 bad_word_patterns = [r'm\W*e\W*r\W*d\W*a', r'c\W*a\W*r\W*a\W*l\W*h\W*o', r'p\W*o\W*r\W*r\W*a', r'p\W*u\W*t\W*a', r'f\W*o\W*d\W*e\W*r', r'c\W*u']
